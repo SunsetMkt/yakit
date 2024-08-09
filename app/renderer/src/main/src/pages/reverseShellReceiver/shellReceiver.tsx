@@ -97,8 +97,8 @@ export const ShellReceiverLeftList: React.FC<ShellReceiverLeftListProps> = (prop
     })
     const onClickDetail = useMemoizedFn((val: string) => {
         const data: GenerateReverseShellCommandRequest = {
-            ...params,
             ...receiverDetail,
+            ...params,
             Program: val
         }
         setReceiverDetail(data)
@@ -379,6 +379,7 @@ export const ShellReceiverRightRun: React.FC<ShellReceiverRightRunProps> = (prop
                 </div>
                 <div className={styles["extra"]}>
                     <YakitPopover
+                        placement="topRight"
                         trigger='click'
                         content={
                             <div className={styles["setting-terminal"]}>
